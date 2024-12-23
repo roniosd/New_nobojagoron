@@ -139,7 +139,7 @@ header {
   transition: transform 0.3s ease;
 }
 
-.logo_container:hover img {
+.logo_container img:hover {
   transform: scale3d(1.1, 1.1, 1.1);
 }
 .org_name:hover {
@@ -209,7 +209,7 @@ header {
 .donation-section {
   background-color: #f5fcf8;
   margin-top: 106px;
-  height: 1340px;
+  padding: 60px;
 }
 .custom-header span,
 .header h1 {
@@ -229,16 +229,20 @@ header {
 
 .donation-section .row .card {
   width: 402px;
-  height: 514px;
+  height: 454px;
   margin-right: 10px;
   padding-top: 10px;
   border: none;
   position: relative;
   transition: box-shadow 0.3s ease;
 }
-
-.donation-section .row .card:hover {
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+.about_section .row img {
+  border-radius: 8px;
+  transition: all ease 0.3s;
+}
+.about_section .row img:hover,
+.donation-section .row .card img:hover {
+  transform: scale(1.07);
 }
 .donation-section .row-1 {
   margin-bottom: 56px;
@@ -258,6 +262,12 @@ header {
   font-weight: 400;
   line-height: 27px;
   text-align: center;
+  max-height: calc(2 * 2em);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .donation-section .row .card .donate-btn {
@@ -335,12 +345,14 @@ header {
   border: 1px solid #d8d8d8;
   padding-top: 8px;
   padding-bottom: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
 }
 
-.activity_section .card:hover {
+.activity_section .card img {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+.activity_section .card img:hover {
   transform: scale(1.05);
-  filter: brightness(1.1);
 }
 
 .activity_section .row .card h3 {
@@ -350,6 +362,12 @@ header {
   text-align: left;
   margin-top: 23px;
   color: #131313;
+  max-height: calc(2 * 1.2em);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .activity_section .row .card p {
   width: 391px;
@@ -358,6 +376,12 @@ header {
   line-height: 27px;
   text-align: left;
   margin: 14px 0 10px 0;
+  max-height: calc(2 * 1.5em);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .activity_section .row .card a {
@@ -401,6 +425,12 @@ header {
   background: #fff;
   padding: 10px 16px;
   border: 1px solid #018d48;
+  transition: all ease 0.3s;
+}
+.banner button:hover {
+  background: #018d48;
+  color: #fff;
+  border: none;
 }
 
 /* ocation-section */
@@ -416,23 +446,34 @@ header {
   background: transparent;
   transition: all 0.5s linear;
 }
-.ocation-section .card:hover {
-  transform: scale(1.01);
-}
 
 .ocation-section .card img {
   width: 420px;
   height: 241px;
   border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.about_box_section .card img {
+  transition: all ease 0.3s;
+}
+
+.about_box_section .card img:hover {
+  transform: scale(1.03);
+}
+.about_box_section .card .ocation-datials-img:hover,
+.ocation-section .card img:hover,
+.activity-box-sec .card .about_as_img:hover {
+  transform: scale(1.01);
 }
 
 .ocation-section .card .card_body {
   width: 397px;
-  height: 352px;
   background: #ffffff;
   border-radius: 8px;
   border-bottom: 2px solid #47be2f;
-  top: 42%;
+  top: 52%;
   left: 6%;
   padding: 10px;
   padding-top: 60px;
@@ -441,8 +482,7 @@ header {
 .ocation-section .card .date,
 .activity-box-sec .card .date {
   background: #47be2f;
-  width: 89.77px;
-  height: 81px;
+  padding: 15px 25px;
   text-align: center;
   top: 38%;
   left: 10%;
@@ -452,7 +492,7 @@ header {
   top: 106px;
   left: 58px;
 }
-.ocation-section .card .date p,
+.ocation-section .card .date h6,
 .activity-box-sec .card .date p {
   border-radius: 5px;
   font-size: 15px;
@@ -460,7 +500,11 @@ header {
   line-height: 15px;
   letter-spacing: 0.75px;
   color: #fff;
-  padding-left: 25px;
+}
+.img_gallary .grid-container p {
+  color: #000;
+  font-size: 18px;
+  font-weight: 600;
 }
 .ocation-section .card span,
 .activity-box-sec .card span {
@@ -479,10 +523,11 @@ header {
 }
 .img_gallary .grid-container img {
   width: 419.94px;
+  border-radius: 8px;
 }
 
-.img_gallary .grid-container:hover img {
-  filter: brightness(1.2) contrast(1.2);
+.img_gallary .grid-container img:hover {
+  filter: brightness(1.2);
 }
 
 .img_gallary .grid-container-all {
@@ -1186,7 +1231,7 @@ footer .copyright p {
     height: 50vh;
   }
   .hero-box .row .btns {
-    width: 110px;
+    padding: 10px 0;
   }
 
   .hero-box .row select,
@@ -1206,8 +1251,14 @@ footer .copyright p {
     text-align: left;
   }
   .ocation-section {
+    padding: 90px;
+    padding-top: 10px;
     height: auto;
   }
+  .ocation-section .card {
+    padding-bottom: 200px;
+  }
+ 
 
   .img_gallary .grid-container-all {
     grid-template-columns: repeat(2, 1fr);
@@ -1257,9 +1308,29 @@ footer .copyright p {
     margin-left: 0px;
   }
 
+  .activity_section .row .card h3,
+  .activity_section .row .card p {
+    width: 100%;
+    max-height: calc(2 * 1.4em);
+  }
+  .donation-section .row .card p {
+    width: 100%;
+    max-height: calc(2 * 2.6em);
+  }
+  .donation-section .row .card .donate-btn {
+    width: 175px;
+  }
+  .ocation-section .card .date {
+    top: 25%;
+  }
+  .ocation-section{
+    padding: 0px;
+  }
+
   .hero-section {
     background: #000;
     width: 100%;
+    margin-top: 100px;
   }
 
   .hero-box {
@@ -1287,6 +1358,8 @@ footer .copyright p {
 
   .donation-section .row .card {
     margin-bottom: 70px;
+    width: 100%;
+    height: 400px;
   }
   body .flower {
     display: none;
@@ -1312,15 +1385,25 @@ footer .copyright p {
     margin-top: 20px;
     margin-bottom: 20px;
   }
+  .img_gallary .grid-container {
+    padding: 30px;
+  }
   .ocation-section .card {
     margin-bottom: 100px;
   }
   .ocation-section .card .card_body {
-    width: 297px;
-    height: 430px;
+    width: 340px;
+    top: 180px;
+  }
+  .ocation-datials-sec .date {
+    display: none;
+  }
+  iframe{
+    width: 100%;
   }
   .ocation-section .card img {
-    width: 320px;
+    padding: 0;
+    width: 100%;
   }
   .activity_section .row .card p {
     width: 291px;
@@ -1426,7 +1509,7 @@ footer .copyright p {
     height: 1000px;
   }
   .grid-container-all .grid-containers img {
-    width: 350.94px;
+    width: 100%;
     height: 248px;
   }
   .grid-container-all .grid-containers {
