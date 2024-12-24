@@ -519,7 +519,6 @@ header {
   display: grid;
   grid-template-rows: 1fr 2fr;
   gap: 10px;
-  overflow: hidden;
   transition: all 0.3s ease;
 }
 .img_gallary .grid-container img {
